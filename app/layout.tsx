@@ -1,7 +1,7 @@
 // app/layout.tsx
 import Navbar from "@/Components/Navbar";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/Components/theme-provider";
 import Footer from "@/Components/Footer";
 import SocialSidebar from "@/Components/SocialSidebar";
 
