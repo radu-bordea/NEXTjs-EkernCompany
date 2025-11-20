@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import { ThemeToggle } from "@/theme/theme-toggle";
 
 const navLinks = [
@@ -18,20 +19,31 @@ const Navbar = () => {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b bg-background/80 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <div className="flex gap-4">
-          <ThemeToggle />
+        {/* LEFT: toggle + logo + name */}
+        <div className="flex items-center gap-3">
+
           {/* Logo */}
+          <Image
+            src="/assets/designer.png"
+            alt="Nordisk Damp & Gass logo"
+            width={40}
+            height={40}
+            className="h-10 w-10 rounded-full object-cover shadow-lg"
+          />
+
           <Link
             href="#home"
-            className="text-lg font-semibold tracking-tight p-0.5"
+            className="text-lg font-semibold tracking-tight leading-none"
             onClick={() => setOpen(false)}
           >
-            Ekern{" "}
-            <span className="font-normal text-muted-foreground">Company</span>
+            Nordisk{" "}
+            <span className="font-normal text-muted-foreground">
+              Damp & Gass
+            </span>
           </Link>
         </div>
 
-        {/* Desktop links + theme toggle */}
+        {/* Desktop links */}
         <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link
@@ -42,6 +54,7 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
+          <ThemeToggle/>
         </div>
 
         {/* Mobile controls */}
@@ -53,6 +66,7 @@ const Navbar = () => {
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
+          <ThemeToggle />
         </div>
       </nav>
 

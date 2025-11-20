@@ -5,6 +5,11 @@ import { ThemeProvider } from "@/theme/theme-provider";
 import Footer from "@/Components/Footer";
 import SocialSidebar from "@/Components/SocialSidebar";
 
+export const metadata = {
+  title: "Nordisk Damp & Gass",
+  description: "Professional steam and gas solutions for industrial and commercial applications.",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -19,10 +24,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar/>
-          <SocialSidebar/>
+          <Navbar />
+          <SocialSidebar />
           {children}
-          <Footer/>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
