@@ -46,7 +46,6 @@ const Navbar = () => {
 
         {/* Mobile controls */}
         <div className="flex items-center gap-3 md:hidden">
-          <ThemeToggle />
           <button
             className="inline-flex items-center justify-center rounded-md border px-2.5 py-2 text-sm"
             onClick={() => setOpen((prev) => !prev)}
@@ -60,13 +59,13 @@ const Navbar = () => {
       {/* Mobile dropdown */}
       {open && (
         <div className="md:hidden border-t bg-background/95 backdrop-blur">
-          <div className="mx-auto flex max-w-5xl flex-col px-4 py-2 space-y-1">
+          <div className="mx-auto flex max-w-5xl flex-col px-4 py-2 space-y-1 items-center">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="py-2 text-xl font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
               </Link>
