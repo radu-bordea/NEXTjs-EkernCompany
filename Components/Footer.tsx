@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
+import SocialFooterSection from "./SocialFooterSection";
 
 const Footer = () => {
   return (
@@ -26,6 +27,11 @@ const Footer = () => {
             <Mail className="h-4 w-4" />
             <span>info@keren-company.com</span>
           </Link>
+        </div>
+
+        {/* MIDDLE SIDE  */}
+        <div>
+          <SocialFooterSection/>
         </div>
 
         {/* RIGHT SIDE */}
